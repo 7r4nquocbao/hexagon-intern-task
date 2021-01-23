@@ -176,8 +176,16 @@ function LineChart(props) {
                                     fontFamily: 'Montserrat',
                                     padding: 15,
                                     maxTicksLimit: ticks,
-                                    maxRotation: 0
-                                }
+                                    maxRotation: 0,
+                                    callback: (value, index, values) => {
+                                        const date = new Date(value);
+                                        return `${date.getMonth() + 1}/${date.getDate()}`;
+                                    }
+                                },
+                                // type: 'time',
+                                // time: {
+                                //     displayFormats: "DD/MM/YYYY",
+                                // }
                             }],
                             yAxes: [{
                                 display: true,
